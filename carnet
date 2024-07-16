@@ -7,7 +7,7 @@
         async function verificarEstadoPago() {
             const nombre = new URLSearchParams(window.location.search).get('nombre');
             const apellido = new URLSearchParams(window.location.search).get('apellido');
-            const response = await fetch(TU_URL_DEL_SCRIPT?nombre=${nombre}&apellido=${apellido});
+            const response = await fetch(AKfycbxtO0j-A5w0lV07Iz2Vtk6eBEK_HlX3r-VvA0dYaO-Q?nombre=${nombre}&apellido=${apellido});
             const data = await response.json();
             
             document.body.innerHTML = `<h1>Estado de Pago</h1>

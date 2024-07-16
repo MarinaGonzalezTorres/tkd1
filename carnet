@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar Estado de Pago</title>
+    <script>
+        async function verificarEstadoPago() {
+            const nombre = new URLSearchParams(window.location.search).get('nombre');
+            const apellido = new URLSearchParams(window.location.search).get('apellido');
+            const response = await fetch(TU_URL_DEL_SCRIPT?nombre=${nombre}&apellido=${apellido});
+            const data = await response.json();
+            
+            document.body.innerHTML = `<h1>Estado de Pago</h1>
+                                        <p><strong>Nombre:</strong> ${nombre} ${apellido}</p>
+                                        <p><strong>Pagado:</strong> ${data.pagado !== undefined ? data.pagado : data.error}</p>`;
+        }
+
+        window.onload = verificarEstadoPago;
+    </script>
+</head>
+<body>
+</body>
+</html>
